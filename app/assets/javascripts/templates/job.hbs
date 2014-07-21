@@ -1,0 +1,86 @@
+<div class="job js-job is-{{status}}" id="{{uuid}}" data-status="{{visible_status}}"
+     data-uuid="{{uuid}}" data-title="{{title}}" data-format="{{format}}" data-fromDate="{{fromDate}}"
+     data-toDate="{{toDate}}">
+    <a href="#{{uuid}}" class="job-link js-job-link">
+        <div class="publisher-logo logo-{{publisher}}"></div>
+        <header class="identifying-info">
+            <h3 class="title">{{title}} <small>{{uuid}}</small></h3>
+            <h5 class="date-range">{{#friendlydatetime fromDate}}{{/friendlydatetime}} &mdash; {{#friendlydatetime toDate}}{{/friendlydatetime}}</h5>
+        </header>
+        <div class="status">
+            <div class="job-progress">
+                {{#each phases}}
+                    <li><span>{{this}}</span></li>
+                {{/each}}
+            </div>
+
+            <div class="tags">
+                <ul class="list-inline pull-right">
+                    {{#each tags}}
+                        <li><span>{{this}}</span></li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </a>
+
+    <div class="job-detail">
+        {{#if quote}}
+            <section class="detail detail-quoted clearfix">
+                <figure class="detail-box">
+                    <figcaption>Estimated Activities</figcaption>
+                    <h3>{{#commaifyNumber quote.estimatedActivityCount}}{{/commaifyNumber}}</h3>
+                </figure>
+                <figure class="detail-box">
+                    <figcaption>Estimated Delivery Time</figcaption>
+                    <h3>{{quote.estimatedDurationHours}} Hours</h3>
+                </figure>
+                <figure class="detail-box">
+                    <figcaption>Estimated Data Size</figcaption>
+                    <h3>{{quote.estimatedFileSizeMb}} MB</h3>
+                </figure>
+                <div class="actions pull-right">
+                    <h3>This OK?</h3>
+                    <button class="btn btn-danger pull-left js-action js-action-reject" data-action="reject">
+                        <span class="glyphicon glyphicon-remove"></span> Reject
+                    </button>
+                    <button class="btn btn-success pull-right js-action js-action-accept" data-action="accept">
+                        <span class="glyphicon glyphicon-ok"></span> Accept
+                    </button>
+                </div>
+            </section>
+        {{/if}}
+
+        {{#if percentComplete}}
+            <section class="detail detail-running clearfix">
+                <figure class="detail-box">
+                    <figcaption>Complete</figcaption>
+                    <h3>{{percentComplete}}%</h3>
+                </figure>
+                <figure class="detail-box">
+                    <figcaption>Time to Completion</figcaption>
+                    <h3>{{timeRemainingHrs}} Hours</h3>
+                </figure>
+            </section>
+        {{/if}}
+
+        {{#if results}}
+            <section class="detail detail-delivered clearfix">
+                <figure class="detail-box">
+                    <figcaption>Activities</figcaption>
+                    <h3>{{#commaifyNumber results.activityCount}}{{/commaifyNumber}}</h3>
+                </figure>
+                <figure class="detail-box">
+                    <figcaption>Data Expires</figcaption>
+                    <h3>{{#friendlydate results.expiresAt}}{{/friendlydate}}</h3>
+                </figure>
+                <div class="actions pull-right">
+                    <h3>{{results.fileSizeMb}} MB</h3>
+                    <a href="/jobs/download?uuid={{uuid}}" class="btn btn-success">
+                        <span class="glyphicon glyphicon-download"></span> Download
+                    </a>
+                </div>
+            </section>
+        {{/if}}
+    </div>
+</div>

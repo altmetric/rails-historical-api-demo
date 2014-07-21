@@ -1,0 +1,5 @@
+# A sample Bowerfile
+
+asset 'bootstrap'
+asset 'moment'
+asset 'eonasdan-bootstrap-datetimepicker'

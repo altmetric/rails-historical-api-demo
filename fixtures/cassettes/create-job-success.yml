@@ -1,0 +1,62 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://<GNIP_USERNAME>:<GNIP_PASSWORD>@historical.gnip.com/accounts/<GNIP_ACCOUNT>/jobs
+    body:
+      encoding: UTF-8
+      string: '{"publisher":"twitter","streamType":"track","dataFormat":"activity-streams","fromDate":"201407010000","toDate":"201407010001","title":"TITLE","rules":[{"value":"RULE1"},{"value":"RULE2","tag":"TAG"}]}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '200'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Connection:
+      - keep-alive
+      Status:
+      - 201 Created
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"ca696bb2a3c582ce47c8d4b1084cf2ba"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Runtime:
+      - '1.601387'
+      Date:
+      - Mon, 07 Jul 2014 21:19:23 GMT
+      X-Rack-Cache:
+      - invalidate, pass
+      Vary:
+      - Accept-Encoding
+      Content-Encoding:
+      - gzip
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAEA6pWKsksyUlVslIK8QzxcVXSUUpMTs4vzSsBiqQWZZan5gGF
+        CkqTcjKLM1KLgIIl5ZklJUCWjlJxSVFqYm5IZQFId0lRYnI2UDAtvyg3EaQ5
+        MbkksyyzpFIXoqwYJFeUn+uSWAJSbmRgaGJgbmBoAARAmZJ8dHEDA0OgeFFq
+        YWlqcUlqilMlUDIV6JqU1JzMPIf0vMyC5NQ8oKU5esn5ucgqHUGWg4zRNTAH
+        ohAjQytDSysj4yigouKSxJLSYqB8fkFqXmoKXMQ3tbg4MR1kf3hiZklmXrpC
+        fp5CYWl+SaoCyM0K7kDr9ICqs/KTQoN8gMoySkoKiq309TMyi0vyizKTgc4A
+        OQnkFisTE2N9aBgW60OCUB8egMX60PBD0qoP9EZytj7Q8GJ905IyiyQDy+QU
+        C72s4vw8pVoAAAAA//8BAAD//3kD+augAQAA
+    http_version:
+  recorded_at: Mon, 07 Jul 2014 21:19:24 GMT
+recorded_with: VCR 2.8.0

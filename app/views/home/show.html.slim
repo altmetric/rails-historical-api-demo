@@ -1,0 +1,50 @@
+= content_for :body_content
+  .container
+    .row
+      .col-lg-12.col-md-12.col-sm-12.col-xs-12.job-list-container
+        h2 My Jobs
+        a.new-job href="#new-job"
+          span.glyphicon.glyphicon-plus
+        form#new-job.detail.new-job-form method="post" action="/jobs" name="new-job-form" role="form"
+          .container-fluid
+            .row
+              .col-lg-6
+                .form-group
+                  label for="title" Title
+                  input.form-control name="title" pattern=".+" placeholder="Title" required="" type="text" value=""
+              .col-lg-6
+                .form-group
+                  label for="format" Data Format
+                  select.form-control name="format" placeholder="Data Format" required=""
+                    option selected="" value="activity_streams" Activity Streams
+                    option value="original" Original
+            .row
+              .col-lg-6
+                .form-group
+                  label for="fromDate" From Date
+                  .input-group
+                    span.input-group-addon
+                      span.glyphicon.glyphicon-calendar
+                    input.form-control.js-datetime-field data-date-format="YYYYMMDDHHmm" pattern="\d{12}" required="" name="fromDate" type="datetime" /
+              .col-lg-6
+                .form-group
+                  label for="toDate" To Date
+                  .input-group
+                    span.input-group-addon
+                      span.glyphicon.glyphicon-calendar
+                    input.form-control.js-datetime-field data-date-format="YYYYMMDDHHmm" pattern="\d{12}" required="" name="toDate" type="datetime" /
+            .row
+              .col-lg-6
+                .form-group
+                  label for="rulesFile" Rules File
+                  input.form-control name="rulesFile" type="file"
+              .col-lg-6
+                .form-group
+                  label for="rules" Rules
+                  textarea.form-control name="rules" rows="3"
+            footer.actions
+              button.btn.action.pull-left type="reset" Cancel
+              button.btn.btn-success.action.pull-right.js-action-create type="submit" data-action="create"
+                span.glyphicon.glyphicon-plus
+                | &nbsp;Create
+        .job-list#job-list

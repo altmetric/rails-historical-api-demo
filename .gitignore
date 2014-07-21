@@ -1,0 +1,28 @@
+# Git Ignore File
+
+# Rails
+.bundle
+.config
+.rspec
+coverage
+config/*.yml
+db/*.sqlite3
+public/stylesheets/**/*
+public/assets/source_maps
+spec/reports
+spec/tmp
+spec/javascripts/*.js
+spec/javascripts/*.map
+log/*
+tmp/*
+
+# YARD
+.yardoc
+_yardoc
+
+.sass-cache
+.idea
+*.iml
+*.ipr
+*.iws
+

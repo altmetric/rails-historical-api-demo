@@ -1,0 +1,15 @@
+//= require jquery
+//= require jquery_ujs
+//= require handlebars
+//= require handlebars_helpers
+//= require moment
+//= require bootstrap
+//= require eonasdan-bootstrap-datetimepicker
+//= require_tree ./templates
+//= require view_base
+//= require search
+//= require job
+//= require job_list
+//= require job_data
+//= require new_job_form
+//= require main

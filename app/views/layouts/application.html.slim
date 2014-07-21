@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'
+    = stylesheet_link_tag 'application', media: 'all'
+    = csrf_meta_tags
+  body
+    nav.navbar.navbar-white role="navigation"
+      .container-fluid
+        .navbar-header
+          a.navbar-brand href='http://gnip.com/products/historical/historical-powertrack/' Historical
+        .collapse.navbar-collapse
+          ul.nav.navbar-nav
+            li.dropdown
+              a.dropdown-toggle data-toggle="dropdown"
+                | Docs
+                span.caret
+              ul.dropdown-menu
+                li
+                  a href='http://support.gnip.com/apis/powertrack/rules.html' PowerTrack Rules
+                li
+                  a href='http://support.gnip.com/apis/historical_api/' Historical API Docs
+          form.navbar-form.navbar-right role="search"
+            .form-group.has-feedback
+              input.form-control#search type="search" placeholder="Filter Jobs"
+              span.glyphicon.glyphicon-search.form-control-feedback
+    = yield :body_content
+    = javascript_include_tag 'application'

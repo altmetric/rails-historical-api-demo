@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://<GNIP_USERNAME>:<GNIP_PASSWORD>@historical.gnip.com/accounts/<GNIP_ACCOUNT>/publishers/twitter/historical/track/jobs/vpsyf1ryvx
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"ebe1067d89c690bdc46021e5fa0c3ffd"'
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Runtime:
+      - '0.217777'
+      Date:
+      - Mon, 07 Jul 2014 18:09:41 GMT
+      X-Rack-Cache:
+      - miss
+      Vary:
+      - Accept-Encoding
+      Content-Encoding:
+      - gzip
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAEA6pWKsksyUlVslLyyCwuyS/KTE7MUQjIL08tCilKTM5WCE7M
+        LQBK6yglJifnl+aVABWmFmWWp+YBhQpKk3IyizNSi4CCJeWZJSVAlo5ScUlR
+        amJuSGUByNASkCFAwbT8otxEkObE5JLMssySSl2IsmKQXFF+rktiCUi5kYGh
+        iYG5gaEBEABlSvLRxQ0MDIHiRamFpanFJakpTpVAyVSga1JSczLzHNLzMguS
+        U/OAluboJefnIqt0BFkOMkbXwByIQgzNrEyAyDIKqKi4JLGktBgoX1iaD1QK
+        F/FNLS5OTAfZ75WfpACRVEjMA+LyxMySzLx0heRSYJjlphYpAEMntaAkMS85
+        VQ+oPSs/KTTIB6gvo6SkoNhKXz8DHrZ6IDeCHGdlYmKsD9QGCtRifUiY6sND
+        tFgfGqBIWvWB/krO1gcaXqxfVlBcmWZYVFlWoZdVnA+KDLDzlKyqlYDezQSG
+        NdDL0KB2BlmhZAUMPB2EpEtpUWJJZn6eR35pEcjrhnqgAIdLu2XmpAZnVqX6
+        JgHlDCByFQWZRanFKAFpaAIOSAsrI6MopVpgikgtAoW/c35uQU5qSaqSlUEt
+        AAAA//8BAAD//yUTeGRhAgAA
+    http_version:
+  recorded_at: Mon, 07 Jul 2014 18:09:41 GMT
+recorded_with: VCR 2.8.0
