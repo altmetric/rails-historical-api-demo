@@ -24,17 +24,7 @@ class JobsController < ApplicationController
     prevent_raw_and_file_rules_input!(params[:rules], params[:rulesFile])
     ensure_raw_or_file_rules_input!(params[:rules], params[:rulesFile])
 
-    if params[:rules] != ""
-      rules_hash = params[:rules].split(/\r?\n/).map { |rule| {value: rule} }
-    else
-      begin
-        rules_hash = Yajl::Parser.new(symbolize_keys: true).parse(params[:rulesFile].read)
-      rescue Yajl::ParseError => e
-        raise Gnip::InvalidRequestException.new("Could not parse Rules File JSON: #{e.message}.")
-      end
-    end
-
-    job_opts = {dataFormat: params[:format], fromDate: params[:fromDate], toDate: params[:toDate], title: params[:title], rules: rules_hash}
+    job_opts = {dataFormat: params[:format], fromDate: params[:fromDate], toDate: params[:toDate], title: params[:title], rules: hashify_rules(params[:rules], params[:rulesFile])}
     render_json augment_job_data!(Gnip::HistoricalService.create_job(job_opts))
   end
 
@@ -64,6 +54,16 @@ class JobsController < ApplicationController
 
   def render_json(hash)
     render json: Yajl::Encoder.encode(hash, {html_safe?: true})
+  end
+
+  def hashify_rules(rules_raw, rules_file)
+    if rules_raw != ""
+      rules_raw.split(/\r?\n/).map { |rule| {value: rule} }
+    else
+      Yajl::Parser.new(symbolize_keys: true).parse(rules_file.read)
+    end
+  rescue Yajl::ParseError => e
+    raise Gnip::InvalidRequestException.new("Could not parse Rules File JSON: #{e.message}.")
   end
 
   def prevent_raw_and_file_rules_input!(rules_raw, rules_file)
