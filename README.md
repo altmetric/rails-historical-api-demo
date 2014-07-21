@@ -5,6 +5,8 @@
 A simple Rails application that uses the [Gnip Historical PowerTrack API](http://support.gnip.com/apis/historical_api/)
 to give you complete and comprehensive access to every publicly available Tweet, ever.
 
+This sample application demonstrates how to effectively interact with the API and manage your historical jobs.
+
 Here's a short video showing how to get Twitter data about the 2014 World Cup matches:
 
 ![Historical API Demo](demo.gif)
