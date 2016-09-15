@@ -34,16 +34,20 @@ module Gnip
 
     private
 
+    def self.base_url
+      "https://gnip-api.gnip.com/historical/powertrack/accounts/#{GNIP_ACCOUNT}/publishers/twitter"
+    end
+
     def self.jobs_url
-      "https://historical.gnip.com/accounts/#{GNIP_ACCOUNT}/jobs"
+      "#{base_url}/jobs.json"
     end
 
     def self.job_url(uuid)
-      "https://historical.gnip.com/accounts/#{GNIP_ACCOUNT}/publishers/twitter/historical/track/jobs/#{uuid}"
+      "#{base_url}/jobs/#{uuid}.json"
     end
 
     def self.results_url(uuid)
-      "#{job_url(uuid)}/results"
+      "#{job_url(uuid)}/results.json"
     end
 
     def self.parse_json(json)
