@@ -1,0 +1,24 @@
+{
+    "acceptedAt": "2012-06-14T22:43:27Z",
+    "acceptedBy": "foo@gnip-customer.com",
+    "account": "gnip-customer",
+    "format": "activity-streams",
+    "fromDate": "201201010000",
+    "jobURL": "https://gnip-api.gnip.com/historical/powertrack/accounts/{ACCOUNT_NAME}/publishers/twitter/jobs/{JOB_UUID}.json",
+    "percentComplete": 0,
+    "publisher": "Twitter",
+    "quote": {
+        "costDollars": 5000,
+        "estimatedActivityCount": 10000,
+        "estimatedDurationHours": 72,
+        "estimatedFileSizeMb": 10.0,
+        "expiresAt": "2012-06-16T22:43:00Z"
+    },
+    "requestedAt": "2012-06-13T22:43:27Z",
+    "requestedBy": "foo@gnip-customer.com",
+    "status": "accepted",
+    "statusMessage": "Job accepted and ready to be queued.",
+    "streamType": "track_v2",
+    "title": "my_job",
+    "toDate": "201201010001"
+}

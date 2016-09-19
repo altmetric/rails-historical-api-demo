@@ -19,8 +19,7 @@ gem 'handlebars_assets'
 gem 'uglifier'
 
 group :development, :test do
-  gem 'vcr', '~> 2.9.2'
-  gem 'webmock', '~> 1.18.0', :require => false
+  gem 'webmock', '~> 1.18.0'
   gem 'rspec-rails', '~> 2.14.0'
   gem 'jasmine-rails'
   gem 'sinon-rails'

@@ -1,0 +1,22 @@
+{
+    "acceptedAt": "2016-09-19T12:57:42Z",
+    "acceptedBy": "shane@example.com",
+    "account": "example",
+    "format": "activity_streams",
+    "fromDate": "201601010000",
+    "jobURL": "https://historical.gnip.com:443/accounts/example/publishers/twitter/historical/track_v2/jobs/7wdexe7dcj.json",
+    "publisher": "twitter",
+    "quote": {
+        "estimatedActivityCount": 100,
+        "estimatedDurationHours": "1.0",
+        "estimatedFileSizeMb": "0.0",
+        "expiresAt": "2016-09-26T09:16:05Z"
+    },
+    "requestedAt": "2016-09-19T09:12:47Z",
+    "requestedBy": "shane@example.com",
+    "status": "rejected",
+    "statusMessage": "Job quote rejected by customer.",
+    "streamType": "track_v2",
+    "title": "Mentioning GNIP",
+    "toDate": "201601020000"
+}

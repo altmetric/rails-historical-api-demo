@@ -1,0 +1,31 @@
+{
+    "delivered": {
+        "activityCount": 15958,
+        "jobCount": 3,
+        "jobDaysRun": 73
+    },
+    "jobs": [
+        {
+            "expiresAt": "2012-11-14T21:21:15Z",
+            "fromDate": "201201010000",
+            "jobURL": "https://gnip-api.gnip.com/historical/powertrack/accounts/{ACCOUNT_NAME}/publishers/twitter/jobs/{JOB_UUID}.json",
+            "percentComplete": 40,
+            "publisher": "Twitter",
+            "status": "running",
+            "streamType": "track_v2",
+            "title": "my_job1",
+            "toDate": "201201010001"
+        },
+        {
+            "expiresAt": "2012-11-16T10:15:03Z",
+            "fromDate": "201201010000",
+            "jobURL": "https://gnip-api.gnip.com/historical/powertrack/accounts/{ACCOUNT_NAME}/publishers/twitter/jobs/{JOB_UUID}.json",
+            "percentComplete": 100,
+            "publisher": "Twitter",
+            "status": "delivered",
+            "streamType": "track_v2",
+            "title": "my_job2",
+            "toDate": "201201010001"
+        }
+    ]
+}

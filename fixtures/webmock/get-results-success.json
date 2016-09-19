@@ -1,0 +1,13 @@
+{
+    "expiresAt": "2012-11-24T18:53:23Z",
+    "suspectMinutesUrl": "https://archive.replay.historical.review.s3.amazonaws.com/customers/gnip-biz/20120101-20120101_5zzax1awxq/suspectMinutes.json?...",
+    "totalFileSizeBytes": 1146952,
+    "urlCount": 5,
+    "urlList": [
+        "https://archive.replay.historical.review.s3.amazonaws.com/historical/twitter/track/original/gnip-customer/2012/08/29/20120701-20120701_jbmfgctzw5/2012/07/01/00/10_activities.json.gz?...",
+        "https://archive.replay.historical.review.s3.amazonaws.com/historical/twitter/track/original/gnip-customer/2012/08/29/20120701-20120701_jbmfgctzw5/2012/07/01/00/10_activities.json.gz?...",
+        "https://archive.replay.historical.review.s3.amazonaws.com/historical/twitter/track/original/gnip-customer/2012/08/29/20120701-20120701_jbmfgctzw5/2012/07/01/00/10_activities.json.gz?...",
+        "https://archive.replay.historical.review.s3.amazonaws.com/historical/twitter/track/original/gnip-customer/2012/08/29/20120701-20120701_jbmfgctzw5/2012/07/01/00/10_activities.json.gz?...",
+        "https://archive.replay.historical.review.s3.amazonaws.com/historical/twitter/track/original/gnip-customer/2012/08/29/20120701-20120701_jbmfgctzw5/2012/07/01/00/10_activities.json.gz?..."
+    ]
+}

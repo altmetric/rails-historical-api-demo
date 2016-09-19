@@ -12,8 +12,10 @@ require 'bundler/setup'
 require File.expand_path('../../config/environment', __FILE__)
 require 'rspec/rails'
 require 'rspec/autorun'
+require 'webmock/rspec'
 require 'pry'
-require 'webmock'
+
+WebMock.disable_net_connect!
 
 RSpec.configure do |config|
   config.order = 'random'

@@ -1,0 +1,30 @@
+{
+    "account": "example",
+    "format": "activity_streams",
+    "fromDate": "201601010000",
+    "jobURL": "https://historical.gnip.com:443/accounts/example/publishers/twitter/historical/track_v2/jobs/7wdexe7dcj.json",
+    "publisher": "twitter",
+    "requestedAt": "2016-09-19T09:12:47Z",
+    "requestedBy": "shane@example.com",
+    "rules": {
+        "detail": [
+            {
+                "created": true,
+                "rule": {
+                    "id": 8621804425157069371,
+                    "value": "url_contains:gnip.com"
+                }
+            }
+        ],
+        "sent": "2016-09-19T09:12:47.795Z",
+        "summary": {
+            "created": 1,
+            "not_created": 0
+        }
+    },
+    "status": "opened",
+    "statusMessage": "Waiting on quote from Gnip.",
+    "streamType": "track_v2",
+    "title": "Mentioning GNIP",
+    "toDate": "201601020000"
+}
