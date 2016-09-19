@@ -47,7 +47,7 @@ module Gnip
     end
 
     def self.results_url(uuid)
-      "#{job_url(uuid)}/results.json"
+      "#{base_url}/jobs/#{uuid}/results.json"
     end
 
     def self.parse_json(json)
