@@ -18,11 +18,14 @@ gem 'autoprefixer-rails'
 gem 'handlebars_assets'
 gem 'uglifier'
 
-group :development, :test do
+group :test do
   gem 'webmock', '~> 1.18.0'
   gem 'rspec-rails', '~> 2.14.0'
   gem 'jasmine-rails'
   gem 'sinon-rails'
+end
+
+group :development, :test do
   gem 'coffee-rails-source-maps'
 end
 
