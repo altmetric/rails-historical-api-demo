@@ -39,7 +39,8 @@ class JobsController < ApplicationController
 
     # Can easily parallelize this with JRuby
     self.response_body = Enumerator.new do |w|
-      results[:urlList].each do |url|
+      Parallel.each(results[:urlList]) do |url|
+        Rails.logger.debug("Starting on downloading #{url}")
         uri = URI(url)
         res = Net::HTTP.get_response(uri)
         zr = Zlib::GzipReader.new(StringIO.new(res.body))

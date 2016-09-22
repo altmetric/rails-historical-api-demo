@@ -17,6 +17,7 @@ gem 'slim-rails'
 gem 'autoprefixer-rails'
 gem 'handlebars_assets'
 gem 'uglifier'
+gem 'parallel', '~> 1.9'
 
 group :test do
   gem 'webmock', '~> 1.18.0'
