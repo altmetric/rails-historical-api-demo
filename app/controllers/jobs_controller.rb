@@ -2,13 +2,6 @@ require 'gnip/historical_service'
 require 'yajl'
 
 class JobsController < ApplicationController
-  rescue_from 'Exception' do |e|
-    render text: e.message, status: :error
-  end
-
-  rescue_from 'Gnip::InvalidRequestException' do |e|
-    render text: e.message, status: :bad_request
-  end
 
   def index
     # Ignore Rejected jobs - no user action possible
@@ -35,19 +28,36 @@ class JobsController < ApplicationController
   def download
     results = Gnip::HistoricalService.get_results(params[:uuid])
 
-    send_file_headers! type: 'text/plain', filename: "job-#{params[:uuid]}.json"
+    uri_hashes = Parallel.map(results[:urlList]) do |url|
+      uri = URI(url)
+      uri_hash = Digest::MD5.new.hexdigest(url)
 
-    # Can easily parallelize this with JRuby
-    self.response_body = Enumerator.new do |w|
-      Parallel.each(results[:urlList]) do |url|
+      cached_version_location = Rails.root.join('tmp', 'downloads', uri_hash)
+
+      unless File.exists?(cached_version_location)
         Rails.logger.debug("Starting on downloading #{url}")
-        uri = URI(url)
         res = Net::HTTP.get_response(uri)
         zr = Zlib::GzipReader.new(StringIO.new(res.body))
-        zr.each_line do |ln|
-          w << ln
+
+        File.open(cached_version_location, 'w') do |file|
+          file.write(zr.read)
+          zr.close
         end
       end
+
+      uri_hash
+    end
+
+    File.open((Rails.root.join('tmp', "job-#{params[:uuid]}.json")), 'w+') do |output|
+      uri_hashes.each do |file_name|
+        File.open(Rails.root.join('tmp', 'downloads', file_name), 'r') do |cached_partial|
+          output.write(cached_partial.read)
+        end
+      end
+
+      output.rewind
+
+      send_data(output.read, type: 'text/plain', filename: "job-#{params[:uuid]}.json")
     end
   end
 

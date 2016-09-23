@@ -28,6 +28,7 @@ end
 
 group :development, :test do
   gem 'coffee-rails-source-maps'
+  gem 'pry', '~> 0.10.0'
 end
 
 group :production do
