@@ -18,7 +18,9 @@ module Gnip
 
     def self.make_request(method, url, opts={})
       begin
-        RestClient::Request.new(opts.merge!({method: method, user: GNIP_USERNAME, password: GNIP_PASSWORD, url: url, timeout: 30, open_timeout: 30, headers: {accept: :json}})).execute
+        resp = RestClient::Request.new(opts.merge!({method: method, user: GNIP_USERNAME, password: GNIP_PASSWORD, url: url, timeout: 30, open_timeout: 30, headers: {accept: :json}})).execute
+
+        resp.body
       rescue => e
         unless e.response.nil?
           if e.response.code == 400

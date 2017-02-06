@@ -16,7 +16,7 @@ module Gnip
     end
 
     def self.create_job(opts)
-      job_opts = opts.merge!({publisher: 'twitter', streamType: 'track'})
+      job_opts = opts.merge!({publisher: 'twitter', streamType: 'track_v2'})
       parse_json(HTTP.post(jobs_url, Yajl::Encoder.encode(job_opts)))
     end
 
