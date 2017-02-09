@@ -117,8 +117,8 @@ class JobsController < ApplicationController
   end
 
   def add_estimated_runtime!(job)
-    if job[:percentComplete].to_f > 0
-      hours_running = (DateTime.now.utc - DateTime.iso8601(job[:acceptedAt])).to_f / 60
+    if job[:percentComplete].to_f > 0 && job.key?(:acceptedAt)
+      hours_running = (DateTime.now.utc - DateTime.iso8601(job[:acceptedAt])).to_f * 24
       job[:timeRemainingHrs] = ((100.0 / job[:percentComplete].to_f - 1) * hours_running).round(1)
     end
 

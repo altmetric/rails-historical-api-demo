@@ -17,6 +17,9 @@ gem 'slim-rails'
 gem 'autoprefixer-rails'
 gem 'handlebars_assets'
 gem 'uglifier'
+gem 'eventmachine', '~> 1.0.4'
+
+gem 'dotenv-rails'
 
 group :test do
   gem 'webmock', '~> 1.18.0'
